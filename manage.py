@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 import os
 import sys
+import collections
+import collections.abc
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
+    for attr in ("Mapping", "MutableMapping", "Sequence", "Iterator"):
+        if not hasattr(collections, attr):
+            setattr(collections, attr, getattr(collections.abc, attr))
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
