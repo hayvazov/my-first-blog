@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Refor Max{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; color: #333; }
+        header { background: #2b6cb0; color: #fff; padding: 1rem; }
+        header a { color: #fff; text-decoration: none; }
+        nav a { margin-right: 1rem; }
+        .container { max-width: 800px; margin: 0 auto; padding: 1rem; }
+        .cta { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #2b6cb0; color: #fff; text-decoration: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+<header>
+    <h1><a href="{% url 'post_list' %}">Refor Max</a></h1>
+    <nav>
+        <a href="{% url 'limpieza_de_sofas' %}">Limpieza de Sofás</a>
+    </nav>
+</header>
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
